@@ -6,4 +6,5 @@
     <small>{{ post.date.strftime('%Y-%m-%d') }}</small>
     <hr>
     <p>{{ post.content|safe }}</p>
+    <p>Views: {{ post.views }}</p>
 {% endblock content %}

@@ -25,6 +25,7 @@ class Post(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.now)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    
+    views = db.Column(db.Integer, default=0)
+
     def __repr__(self):
         return f'{self.__class__.__name__}({self.id}, {self.title})'

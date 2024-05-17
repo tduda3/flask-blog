@@ -14,6 +14,8 @@ def home():
 @app.route('/post/<int:post_id>')
 def detail(post_id):
     post = Post.query.get_or_404(post_id)
+    post.views += 1
+    db.session.commit()
     return render_template('detail.html', post=post)
 
 
